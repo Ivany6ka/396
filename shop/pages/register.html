@@ -1,0 +1,82 @@
+
+	<!-- ================ start banner area ================= -->
+	<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Регистрация в нашем магазине</h1>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Главная</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Регистрация</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ================ end banner area ================= -->
+
+	<!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="login_box_img">
+						<div class="hover">
+							<h4>Already have an account?</h4>
+							<p>Переходите на страницу авторизации.</p>
+							<a class="button button-account" href="/login">На страницу авторизации</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="login_form_inner register_form_inner">
+						<h3>Создать аккаунт</h3>
+						<form class="row login_form" onsubmit="sendForm(this); return false">
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" name="name" placeholder="Ваше имя"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваше имя'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" name="lastname" placeholder="Ваша Фамилия"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваша Фамилия'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="password" class="form-control" id="password" name="pass" placeholder="Пароль"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Пароль'">
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="creat_account">
+									<input type="checkbox" id="f-option2" name="selector">
+									<label for="f-option2">Согласие на обработку персональных данных</label>
+								</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<button type="submit" class="button button-register w-100">Зарегистрироваться</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+<script>
+	async function sendForm(form) {
+		let formData = new FormData (form);
+
+		let response = await fetch("addUser", {
+			method: "POST",
+			body: formDate,
+		})
+		console.log(await response.json());
+
+	}
+</script>
+
+
